@@ -1,10 +1,9 @@
 import Cart from "../img/cart.png";
 import Logo from "../img/logo.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-function Header() {
-  const [totalItems, setTotalItems] = useState(0);
-  const [totalPrice, setTotalPrice] = useState(0);
+function Header(props) {
+  const { shoppingList, totalPrice } = props;
   function showCart() {
     let cart = document.querySelector(".shopping-cart");
     let itemsInCart = document.querySelector(".items-in-cart");
@@ -48,9 +47,22 @@ function Header() {
           data-testid="testing-cart"
           style={{ display: "none" }}
         >
-          <p className="top1">Item</p> <p className="top1">Price</p>{" "}
-          <p className="top1">Amount</p>
-          <p>Total:</p> <p></p> <p>${totalPrice}</p>
+          <div>
+            <p className="top1">Item</p> <p className="top1">Price</p>{" "}
+            <p className="top1">Amount</p>
+          </div>
+          {shoppingList
+            .filter((item) => item.amount > 0)
+            .map(({ name, price, amount }, index) => (
+              <div key={index}>
+                <p>{name}</p> <p>{price}</p> <p>{amount}</p>
+              </div>
+            ))}
+          <div>
+            <p>Total:</p>
+            <p> </p>
+            <p>${totalPrice}</p>
+          </div>
         </div>
       </div>
     </header>

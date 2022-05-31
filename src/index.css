@@ -135,13 +135,23 @@ header{
 }
 .items-in-cart{
     position: absolute;
-    max-width: 260px;
-    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 340px;
+    min-width: 280px;
+    grid-template-columns: 1fr;
     background-color: rgb(245, 245, 245);
     z-index: 12;
     border: 2px solid rgb(214, 214, 214);
 }
 .items-in-cart > * {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 5px;
+    padding: 4px;
+}
+.items-in-cart > div:last-child > p:nth-child(3){
+    border-bottom: solid salmon 2px;
+}
+.items-in-cart > * > *{
     padding: 4px;
 }
 .top1{

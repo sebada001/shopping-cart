@@ -5,7 +5,8 @@ import Coffee from "./shopping-items/Coffee";
 import Nintendo from "./shopping-items/Nintendo";
 import BodyOil from "./shopping-items/BodyOil";
 
-function ShoppingArea() {
+function ShoppingArea(props) {
+  const { increaseTotalOfItem, decreaseTotalOfItem, handleTotalPrice } = props;
   function showHoverItem(e) {
     let hoverItem = e.currentTarget.parentElement.querySelector(".hover-item");
     hoverItem.style.display = "flex";
@@ -16,12 +17,48 @@ function ShoppingArea() {
   }
   return (
     <div className="shopping-area">
-      <Sneakers show={showHoverItem} hide={hideHoverItem} />
-      <Sunglasses show={showHoverItem} hide={hideHoverItem} />
-      <Watch show={showHoverItem} hide={hideHoverItem} />
-      <Coffee show={showHoverItem} hide={hideHoverItem} />
-      <Nintendo show={showHoverItem} hide={hideHoverItem} />
-      <BodyOil show={showHoverItem} hide={hideHoverItem} />
+      <Sneakers
+        show={showHoverItem}
+        hide={hideHoverItem}
+        handleTotalPrice={handleTotalPrice}
+        increaseTotalOfItem={increaseTotalOfItem}
+        decreaseTotalOfItem={decreaseTotalOfItem}
+      />
+      <Sunglasses
+        show={showHoverItem}
+        hide={hideHoverItem}
+        handleTotalPrice={handleTotalPrice}
+        increaseTotalOfItem={increaseTotalOfItem}
+        decreaseTotalOfItem={decreaseTotalOfItem}
+      />
+      <Watch
+        show={showHoverItem}
+        hide={hideHoverItem}
+        handleTotalPrice={handleTotalPrice}
+        increaseTotalOfItem={increaseTotalOfItem}
+        decreaseTotalOfItem={decreaseTotalOfItem}
+      />
+      <Coffee
+        show={showHoverItem}
+        hide={hideHoverItem}
+        handleTotalPrice={handleTotalPrice}
+        increaseTotalOfItem={increaseTotalOfItem}
+        decreaseTotalOfItem={decreaseTotalOfItem}
+      />
+      <Nintendo
+        show={showHoverItem}
+        hide={hideHoverItem}
+        handleTotalPrice={handleTotalPrice}
+        increaseTotalOfItem={increaseTotalOfItem}
+        decreaseTotalOfItem={decreaseTotalOfItem}
+      />
+      <BodyOil
+        show={showHoverItem}
+        hide={hideHoverItem}
+        handleTotalPrice={handleTotalPrice}
+        increaseTotalOfItem={increaseTotalOfItem}
+        decreaseTotalOfItem={decreaseTotalOfItem}
+      />
     </div>
   );
 }
