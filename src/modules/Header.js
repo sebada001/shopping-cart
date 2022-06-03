@@ -1,5 +1,6 @@
 import Cart from "../img/cart.png";
 import Logo from "../img/logo.png";
+import { Link } from "react-router-dom";
 
 function Header(props) {
   const { shoppingList, totalPrice } = props;
@@ -22,6 +23,10 @@ function Header(props) {
       top: rect.top + window.scrollY,
     };
   }
+  function toCheckout() {
+    const link = document.querySelector("#to-checkout");
+    link.click();
+  }
   return (
     <header>
       <div className="left">
@@ -30,15 +35,20 @@ function Header(props) {
       </div>
       <div className="right">
         <ul>
-          <li>Shop</li>
-          <li>About</li>
+          <li>
+            <Link to="/">Shop</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
         </ul>
         <div
           className="shopping-cart"
           onMouseEnter={showCart}
           onMouseLeave={hideCart}
         >
-          <img src={Cart} alt="icon of a cart"></img>
+          <Link to="/checkout" id="to-checkout"></Link>
+          <img src={Cart} alt="icon of a cart" onClick={toCheckout}></img>
         </div>
         <div
           className="items-in-cart"

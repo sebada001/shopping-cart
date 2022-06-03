@@ -1,6 +1,5 @@
-import ShoppingArea from "./ShoppingArea";
-import Header from "./Header";
 import { useState } from "react";
+import RouteSwitch from "../RouteSwitch";
 
 function App() {
   const [totalPrice, setTotalPrice] = useState(0);
@@ -62,13 +61,12 @@ function App() {
   };
   return (
     <div className="App">
-      <Header totalPrice={totalPrice} shoppingList={shoppingList} />
-      <ShoppingArea
-        handleTotalPrice={handleTotalPrice}
+      <RouteSwitch
+        totalPrice={totalPrice}
+        shoppingList={shoppingList}
         increaseTotalOfItem={increaseTotalOfItem}
         decreaseTotalOfItem={decreaseTotalOfItem}
-        shoppingList={shoppingList}
-        matcher={matcher}
+        handleTotalPrice={handleTotalPrice}
       />
     </div>
   );
