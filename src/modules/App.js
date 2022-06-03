@@ -56,7 +56,7 @@ function App() {
     setTotalPrice(totalPrice + amount);
   };
   const handleDecreasePrice = function (amount) {
-    if (totalPrice != 0) {
+    if (totalPrice !== 0) {
       decreasePrice(amount);
     }
   };

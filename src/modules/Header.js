@@ -1,6 +1,5 @@
 import Cart from "../img/cart.png";
 import Logo from "../img/logo.png";
-import { useEffect, useState } from "react";
 
 function Header(props) {
   const { shoppingList, totalPrice } = props;
@@ -26,21 +25,20 @@ function Header(props) {
   return (
     <header>
       <div className="left">
-        <img src={Logo}></img>
+        <img src={Logo} alt="logo"></img>
         <div className="slogan">Shopping Experts</div>
       </div>
       <div className="right">
         <ul>
           <li>Shop</li>
           <li>About</li>
-          <li>Contact us</li>
         </ul>
         <div
           className="shopping-cart"
           onMouseEnter={showCart}
           onMouseLeave={hideCart}
         >
-          <img src={Cart} alt="cart-image"></img>
+          <img src={Cart} alt="icon of a cart"></img>
         </div>
         <div
           className="items-in-cart"
