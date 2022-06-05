@@ -1,5 +1,4 @@
 import SneakersPic from "../../img/sneakers.jpg";
-import { useState } from "react";
 
 function Sneakers(props) {
   const {
@@ -8,29 +7,30 @@ function Sneakers(props) {
     handleTotalPrice,
     hide,
     show,
+    shoppingList,
   } = props;
-  const [total, setTotal] = useState(0);
+  const itemName = "Sneakers";
+  const thisItem = shoppingList.find((item) => item.name === itemName);
+
   let price = 20;
   const increaseTotal = function () {
-    setTotal(total + 1);
     handleTotalPrice("increase", price);
-    increaseTotalOfItem("Sneakers", price);
+    increaseTotalOfItem(itemName, price);
   };
   const decreaseTotal = function () {
-    setTotal(total - 1);
     handleTotalPrice("decrease", price);
   };
   const handleLocalTotal = function () {
-    if (total != 0) {
+    if (thisItem.amount != 0) {
       decreaseTotal();
-      decreaseTotalOfItem("Sneakers", price);
+      decreaseTotalOfItem(itemName, price);
     }
   };
   return (
     <div className="product-container big">
       <div className="hover-item" onMouseOut={hide}>
         <button className="less" onClick={handleLocalTotal}>{`<`}</button>
-        <p className="current-total">{total}</p>
+        <p className="current-total">{thisItem.amount}</p>
         <button className="more" onClick={increaseTotal}>{`>`}</button>
       </div>
       <img src={SneakersPic} alt="sneakers" onMouseEnter={show}></img>

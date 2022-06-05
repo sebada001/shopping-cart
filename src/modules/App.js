@@ -3,7 +3,9 @@ import RouteSwitch from "../RouteSwitch";
 
 function App() {
   const [totalPrice, setTotalPrice] = useState(0);
-  const [shoppingList, setShoppingList] = useState([]);
+  const [shoppingList, setShoppingList] = useState([
+    { name: "Sneakers", amount: 0, price: 20 },
+  ]);
   //helper functions
   const matcher = function (item) {
     return shoppingList.find((obj) => {
@@ -15,15 +17,19 @@ function App() {
       return obj.name !== item;
     });
   };
+  const handleSetShoppingItems = function (item, amount, price, filtered) {
+    setShoppingList([
+      { name: item, amount: amount, price: "$" + price },
+      ...filtered,
+    ]);
+  };
   //
   const increaseTotalOfItem = function (item, price) {
     let match = matcher(item);
     let filter = filterer(item);
     if (match === undefined) {
-      setShoppingList([
-        { name: item, amount: 1, price: "$" + price },
-        ...filter,
-      ]);
+      let amount = 1;
+      handleSetShoppingItems(item, amount, price, filter);
       handleTotalPrice("increase", price);
       return;
     }

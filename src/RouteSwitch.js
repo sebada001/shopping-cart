@@ -20,6 +20,7 @@ const RouteSwitch = (props) => {
           path="/"
           element={
             <ShoppingArea
+              shoppingList={shoppingList}
               increaseTotalOfItem={increaseTotalOfItem}
               decreaseTotalOfItem={decreaseTotalOfItem}
               handleTotalPrice={handleTotalPrice}

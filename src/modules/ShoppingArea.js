@@ -6,7 +6,12 @@ import Nintendo from "./shopping-items/Nintendo";
 import BodyOil from "./shopping-items/BodyOil";
 
 function ShoppingArea(props) {
-  const { increaseTotalOfItem, decreaseTotalOfItem, handleTotalPrice } = props;
+  const {
+    increaseTotalOfItem,
+    decreaseTotalOfItem,
+    handleTotalPrice,
+    shoppingList,
+  } = props;
   function showHoverItem(e) {
     let hoverItem = e.currentTarget.parentElement.querySelector(".hover-item");
     hoverItem.style.display = "flex";
@@ -20,6 +25,7 @@ function ShoppingArea(props) {
       <Sneakers
         show={showHoverItem}
         hide={hideHoverItem}
+        shoppingList={shoppingList}
         handleTotalPrice={handleTotalPrice}
         increaseTotalOfItem={increaseTotalOfItem}
         decreaseTotalOfItem={decreaseTotalOfItem}
