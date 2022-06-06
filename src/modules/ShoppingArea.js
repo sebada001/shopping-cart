@@ -33,6 +33,7 @@ function ShoppingArea(props) {
       <Sunglasses
         show={showHoverItem}
         hide={hideHoverItem}
+        shoppingList={shoppingList}
         handleTotalPrice={handleTotalPrice}
         increaseTotalOfItem={increaseTotalOfItem}
         decreaseTotalOfItem={decreaseTotalOfItem}
@@ -40,6 +41,7 @@ function ShoppingArea(props) {
       <Watch
         show={showHoverItem}
         hide={hideHoverItem}
+        shoppingList={shoppingList}
         handleTotalPrice={handleTotalPrice}
         increaseTotalOfItem={increaseTotalOfItem}
         decreaseTotalOfItem={decreaseTotalOfItem}
@@ -47,6 +49,7 @@ function ShoppingArea(props) {
       <Coffee
         show={showHoverItem}
         hide={hideHoverItem}
+        shoppingList={shoppingList}
         handleTotalPrice={handleTotalPrice}
         increaseTotalOfItem={increaseTotalOfItem}
         decreaseTotalOfItem={decreaseTotalOfItem}
@@ -54,6 +57,7 @@ function ShoppingArea(props) {
       <Nintendo
         show={showHoverItem}
         hide={hideHoverItem}
+        shoppingList={shoppingList}
         handleTotalPrice={handleTotalPrice}
         increaseTotalOfItem={increaseTotalOfItem}
         decreaseTotalOfItem={decreaseTotalOfItem}
@@ -61,6 +65,7 @@ function ShoppingArea(props) {
       <BodyOil
         show={showHoverItem}
         hide={hideHoverItem}
+        shoppingList={shoppingList}
         handleTotalPrice={handleTotalPrice}
         increaseTotalOfItem={increaseTotalOfItem}
         decreaseTotalOfItem={decreaseTotalOfItem}

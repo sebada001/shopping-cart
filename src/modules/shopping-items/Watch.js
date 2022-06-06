@@ -8,29 +8,29 @@ function Watch(props) {
     handleTotalPrice,
     hide,
     show,
+    shoppingList,
   } = props;
-  const [total, setTotal] = useState(0);
+  const itemName = "Watch";
+  const thisItem = shoppingList.find((item) => item.name === itemName);
   let price = 30.25;
   const increaseTotal = function () {
-    setTotal(total + 1);
     handleTotalPrice("increase", price);
-    increaseTotalOfItem("Watch", price);
+    increaseTotalOfItem(itemName, price);
   };
   const decreaseTotal = function () {
-    setTotal(total - 1);
     handleTotalPrice("decrease", price);
   };
   const handleLocalTotal = function () {
-    if (total != 0) {
+    if (thisItem.amount != 0) {
       decreaseTotal();
-      decreaseTotalOfItem("Watch", price);
+      decreaseTotalOfItem(itemName, price);
     }
   };
   return (
     <div className="product-container big">
       <div className="hover-item" onMouseOut={hide}>
         <button className="less" onClick={handleLocalTotal}>{`<`}</button>
-        <p className="current-total">{total}</p>
+        <p className="current-total">{thisItem.amount}</p>
         <button className="more" onClick={increaseTotal}>{`>`}</button>
       </div>
       <img src={WatchPic} alt="watch-picture" onMouseEnter={show} />

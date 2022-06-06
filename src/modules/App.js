@@ -5,6 +5,11 @@ function App() {
   const [totalPrice, setTotalPrice] = useState(0);
   const [shoppingList, setShoppingList] = useState([
     { name: "Sneakers", amount: 0, price: 20 },
+    { name: "Sunglasses", amount: 0, price: 15 },
+    { name: "Watch", amount: 0, price: 30.25 },
+    { name: "Nintendo", amount: 0, price: 300 },
+    { name: "Body-oil", amount: 0, price: 25 },
+    { name: "Coffee", amount: 0, price: 16 },
   ]);
   //helper functions
   const matcher = function (item) {

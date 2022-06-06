@@ -11,7 +11,6 @@ function Sneakers(props) {
   } = props;
   const itemName = "Sneakers";
   const thisItem = shoppingList.find((item) => item.name === itemName);
-
   let price = 20;
   const increaseTotal = function () {
     handleTotalPrice("increase", price);
