@@ -13,7 +13,7 @@ const RouteSwitch = (props) => {
     handleTotalPrice,
   } = props;
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/shopping-cart">
       <Header totalPrice={totalPrice} shoppingList={shoppingList} />
       <Routes>
         <Route
