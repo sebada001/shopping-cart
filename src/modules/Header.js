@@ -19,8 +19,8 @@ function Header(props) {
   function getElPosition(el) {
     const rect = el.getBoundingClientRect();
     return {
-      left: rect.left + window.scrollX,
-      top: rect.top + window.scrollY,
+      left: rect.left,
+      top: rect.top,
     };
   }
   function toCheckout() {
